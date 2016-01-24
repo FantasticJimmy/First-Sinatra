@@ -1,6 +1,6 @@
 <% @messages.each do |m| %>
   <div class="message">
-    <h3><%=m.title%> <small>(by:<%=m.author%>)</small></h3>
+    <h3><a href="/messages/<%=m.id%>"><%=m.title%></a><small>(by:<%=m.author%>)</small></h3>
     <p>
       <%= m.content%>
     </p>
