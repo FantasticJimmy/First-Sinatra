@@ -1,9 +1,29 @@
+<!doctype html>
+<html>
+<head>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+
+</head>
+<body>
 <% @messages.each do |m| %>
+  <div class="media" style="background-color:#E6E6E6;margin-left:5%;margin-right:5%;">
   <div class="message">
-    <h3><a href="/messages/<%=m.id%>"><%=m.title%></a><small>(by:<%=m.author%>)</small></h3>
-    <p>
-      <%= m.content%>
+  <div class="media-body">
+    <h4 class="media-heading"><a href="/messages/<%=m.id%>" style="text-decoration: none"><%=m.author%></a>:</h4>
+    <p><%= m.content%>
+      <small><a href="<%=m.url%>"><%= m.url %></a></small>
     </p>
   </div>
+  </div>
+  </div>
 <% end %>
-<a href="/messages/new">Post a message...It's FREE (for now)!</a>
+<a style="margin-left:5%;margin-right:5%;" href="/messages/new">Post a message...It's FREE (for now)!</a>
+
+</body>
+</html>
